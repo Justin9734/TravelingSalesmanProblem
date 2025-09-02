@@ -2,7 +2,7 @@ from math import *
 import itertools
 
 def FindDistance(point1, point2): # idc abt lambda
-    distance = sqrt(abs(point1[0]-point2[0])**2 + abs(point1[1]-point2[1])**2)
+    distance = sqrt(point1[0]-point2[0]**2 + point1[1]-point2[1]**2)
     return distance
 
 def BruteForceSolution(points):

@@ -5,12 +5,16 @@ def FindDistance(point1, point2):
     return sqrt((point1[0] - point2[0])**2 + (point1[1] - point2[1])**2)
 
 def BruteForceSolution(points):
-    paths = itertools.permutations(points)
+    start = points[0]
+    other_points = points[1:]
+
+    paths = itertools.permutations(other_points)
     best_distance = float("inf")
     best_route = None
     distances_checked = 0
 
-    for path in paths:
+    for perm in paths:
+        path = (start,) + perm
         distance = 0
         for i in range(len(path) - 1):
             distances_checked += 1

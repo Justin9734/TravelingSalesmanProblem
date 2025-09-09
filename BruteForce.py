@@ -19,12 +19,13 @@ def BruteForceSolution(points):
         for i in range(len(path) - 1):
             distances_checked += 1
             distance += FindDistance(path[i], path[i+1])
+            print("\r Distances Checked:" + str(distances_checked), end = "", flush=True)
         distances_checked += 1
         distance += FindDistance(path[-1], path[0])
+        print("\r Distances Checked:" + str(distances_checked), end="", flush=True)
 
         if distance < best_distance:
             best_distance = distance
             best_route = path
 
-    print("Distances checked:", distances_checked)
     return [best_distance, best_route]

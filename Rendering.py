@@ -3,7 +3,7 @@ import matplotlib.animation as animation
 from BruteForce import BruteForceSolution
 from random import randint
 print("Testing")
-points = [[randint(0, 1000), randint(0, 1000)] for _ in range(11)]
+points = [[randint(0, 1000), randint(0, 1000)] for i in range(10)]
 
 distance, route = BruteForceSolution(points)
 

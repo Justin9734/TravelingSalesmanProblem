@@ -3,9 +3,10 @@ import matplotlib.animation as animation
 from BruteForce import BruteForceSolution
 from random import randint
 print("Testing")
-points = [[randint(0, 1000), randint(0, 1000)] for _ in range(11)]
+points = [[randint(0, 1000), randint(0, 1000)] for i in range(10)]
+print(len(points))
 
-distance, route = BruteForceSolution(points)
+distance, route, routes_check = BruteForceSolution(points)
 
 def animateRoute(route, distance, title="Animated TSP Route"):
     x = [p[0] for p in route] + [route[0][0]]
@@ -35,5 +36,5 @@ def animateRoute(route, distance, title="Animated TSP Route"):
     plt.show()
 
 animateRoute(route, distance)
-print("Best route:", route)
-
+print("\n Best route:", route)
+print(" \nRoutes checked: ", routes_check)

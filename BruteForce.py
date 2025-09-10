@@ -12,10 +12,11 @@ def BruteForceSolution(points):
     best_distance = float("inf")
     best_route = None
     distances_checked = 0
-
+    routes = 0
     for perm in paths:
         path = (start,) + perm
         distance = 0
+        routes += 1
         for i in range(len(path) - 1):
             distances_checked += 1
             distance += FindDistance(path[i], path[i+1])
@@ -28,4 +29,4 @@ def BruteForceSolution(points):
             best_distance = distance
             best_route = path
 
-    return [best_distance, best_route]
+    return [best_distance, best_route, routes]
